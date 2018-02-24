@@ -13,7 +13,7 @@ $button-height: 52px;
     color: #fff;
     height: $button-height;
     line-height: $button-height;
-    padding: 0 30px;
+    padding: 0;
 
     display: block;
     text-align: center;
@@ -31,6 +31,7 @@ $button-height: 52px;
 
     @include responsive(mobile) {
       margin-top: 15px;
+      padding: 0 30px;
     }
   }
 
@@ -60,6 +61,7 @@ $button-height: 52px;
     @include flex-wrap(wrap);
     @include align-items(flex-start);
     width: 100%;
+    height: 100px;
 
     .cell {
       @include box-sizing(border-box);
@@ -121,6 +123,7 @@ $button-height: 52px;
     }
 
     @include responsive(mobile) {
+      height: auto;
       .filler {
         display: block;
       }
