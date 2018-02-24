@@ -1,0 +1,94 @@
+/* media setting start */
+@mixin responsive($breakpoint)
+  @if $breakpoint == "xs"
+    @media (max-width: 575px)
+      @content
+  @if $breakpoint == "sm"
+    @media (min-width: 576px) and (max-width: 767px)
+      @content
+  @if $breakpoint == "md"
+    @media (min-width: 768px) and (max-width: 991px)
+      @content
+  @if $breakpoint == "lg"
+    @media (min-width: 992px) and (max-width: 1199px)
+      @content
+  @if $breakpoint == "xl"
+    @media (min-width: 1200px)
+      @content
+  @if $breakpoint == "mobile"
+    @media (max-width: 767px)
+      @content
+  @if $breakpoint == "ipad"
+    @media (min-width: 767px) and (max-width: 992px)
+      @content
+  @if $breakpoint == "mobile-ipad"
+    @media (max-width: 992px)
+      @content
+  @if $breakpoint == "desktop"
+    @media (min-width: 993px)
+      @content
+
+/* border radius */
+@mixin border-radius($radius)
+  -webkit-border-radius: $radius
+  -moz-border-radius: $radius
+  -ms-border-radius: $radius
+  border-radius: $radius
+
+@mixin border-top-radius($radius)
+  -webkit-border-top-left-radius: $radius
+  -webkit-border-top-right-radius: $radius
+  -moz-border-radius-topleft: $radius
+  -moz-border-radius-topright: $radius
+  border-top-left-radius: $radius
+  border-top-right-radius: $radius
+
+@mixin border-bottom-radius($radius)
+  -webkit-border-bottom-left-radius: $radius
+  -webkit-border-bottom-right-radius: $radius
+  -moz-border-radius-bottomleft: $radius
+  -moz-border-radius-bottomright: $radius
+  border-bottom-left-radius: $radius
+  border-bottom-right-radius: $radius
+
+@mixin border-left-radius($radius)
+  -webkit-border-top-left-radius: $radius
+  -webkit-border-bottom-left-radius: $radius
+  -moz-border-radius-topleft: $radius
+  -moz-border-radius-bottomleft: $radius
+  border-top-left-radius: $radius
+  border-bottom-left-radius: $radius
+
+@mixin border-right-radius($radius)
+  -webkit-border-top-right-radius: $radius
+  -webkit-border-bottom-right-radius: $radius
+  -moz-border-radius-topright: $radius
+  -moz-border-radius-bottomright: $radius
+  border-top-right-radius: $radius
+  border-bottom-right-radius: $radius
+
+@mixin border-right-bottom-radius($radius)
+  -webkit-border-radius: $radius
+  -webkit-border-bottom-right-radius: 0
+  -moz-border-radius: $radius
+  -moz-border-radius-bottomright: 0
+  border-radius: $radius
+  border-bottom-right-radius: 0
+
+@mixin border-box()
+  box-sizing: border-box
+  -moz-box-sizing: border-box
+  -ms-box-sizing: border-box
+  -webkit-box-sizing: border-box
+  -khtml-box-sizing: border-box
+
+@mixin box-shadow($shadow...)
+  box-shadow: $shadow
+  -moz-box-shadow: $shadow
+  -webkit-box-shadow: $shadow
+  -o-box-shadow: $shadow
+
+@mixin box-sizing($sizing...)
+  box-sizing: $sizing
+  -moz-box-sizing: $sizing
+  -webkit-box-sizing: $sizing

@@ -7,6 +7,6 @@ window._ = require('lodash');
  * code may be modified to fit the specific needs of your application.
  */
 
-try {
-    window.$ = window.jQuery = require('jquery');
-} catch (e) {}
+// try {
+//     window.$ = window.jQuery = require('jquery');
+// } catch (e) {}

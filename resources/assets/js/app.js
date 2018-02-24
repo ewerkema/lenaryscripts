@@ -17,8 +17,8 @@ window.Vue = require('vue');
 
 Vue.component('vergelijker', require('./components/VergelijkerComponent.vue'));
 
-$(document).ready(function() {
-    if ($("#app") !== undefined) {
+jQuery(document).ready(function() {
+    if (jQuery("#app") !== undefined) {
         const app = new Vue({
             el: '#app',
         });
@@ -27,10 +27,12 @@ $(document).ready(function() {
     let selector = '[data-rangeSlider]',
         elements = document.querySelectorAll(selector);
 
-    rangeSlider.create(elements, {
-        // Callback function
-        onInit: function () {
-        },
-    });
+    if (elements.length !== 0) {
+        rangeSlider.create(elements, {
+            // Callback function
+            onInit: function () {
+            },
+        });
+    }
 });
 

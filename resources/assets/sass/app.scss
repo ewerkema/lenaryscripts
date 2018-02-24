@@ -1,12 +1,12 @@
-
 // Fonts
-@import url("https://fonts.googleapis.com/css?family=Raleway:300,400,600");
+@import url("https://fonts.googleapis.com/css?family=Raleway:300,400,600,700,800");
 
 // Variables
 @import "variables";
 
+// Mixins
+@import "mixins";
 
-.navbar-laravel {
-  background-color: #fff;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
-}
+// Components
+@import "comparer";
+@import "_rangeSlider.css";
