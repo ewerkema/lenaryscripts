@@ -39,50 +39,44 @@
                 <div class="cell">Bank</div>
                 <div class="cell">Totale aflossing</div>
                 <div class="cell">Rente</div>
-                <div class="cell">Maandelijkse aflossing</div>
-                <div class="cell"></div>
+                <div class="cell cell-double">Maandelijkse aflossing</div>
             </div>
 
-            <template v-for="loan in allLoans">
-                <a :href="loan.redirect_url" target="_blank" rel="noopener noreferrer" class="block">
-                    <div class="cell cell-no-padding-xs">
-                    <span v-if="loan.image !== false">
-                        <a :href="loan.redirect_url" target="_blank" rel="noopener noreferrer"><img :src="loan.image" /></a>
-                    </span>
-                        <span v-else>
-                        Geen afbeelding gevonden
-                    </span>
-                    </div>
-                    <div class="cell cell-no-padding-xs">
-                        <strong class="visible-xs">Totale aflossing</strong>
-                        <p>{{ calculateTotalCost(loan.rente_in_jkp) | currency }}</p>
-                    </div>
-                    <div class="filler">
-                        <a href="#" class="btn visible-xs">
-                            Ga verder
-                        </a>
-                    </div>
-                    <div class="cell">
-                        <strong class="visible-xs">Rente</strong>
-                        <p>{{ loan.rente_in_jkp | percentage }}</p>
-                    </div>
-                    <div class="filler"></div>
-                    <div class="cell">
-                        <strong class="visible-xs">Maandelijkse aflossing</strong>
-                        <p>{{ calculateMonthlyPayment(loan.rente_in_jkp) | currency }}</p>
-                    </div>
-                    <div class="cell">
-                        <a href="#" class="btn hidden-xs">
-                            Ga verder
-                        </a>
-                    </div>
+            <a :href="loan.redirect_url" target="_blank" rel="noopener noreferrer" class="block" v-for="loan in allLoans">
+                <div class="cell cell-no-padding-xs">
+                <span v-if="loan.image !== false">
+                    <a :href="loan.redirect_url" target="_blank" rel="noopener noreferrer"><img :src="loan.image" /></a>
+                </span>
+                    <span v-else>
+                    Geen afbeelding gevonden
+                </span>
+                </div>
+                <div class="cell cell-no-padding-xs">
+                    <strong class="visible-xs">Totale aflossing</strong>
+                    <p>{{ calculateTotalCost(loan.rente_in_jkp) | currency }}</p>
+                </div>
+                <div class="filler"></div>
+                <div class="cell">
+                    <strong class="visible-xs">Rente</strong>
+                    <p><strong>{{ loan.rente_in_jkp | percentage }}</strong></p>
+                </div>
+                <div class="filler"></div>
+                <div class="cell">
+                    <strong class="visible-xs">Maandelijkse aflossing</strong>
+                    <p>{{ calculateMonthlyPayment(loan.rente_in_jkp) | currency }}</p>
+                </div>
+                <div class="cell button">
+                    <a href="#" class="btn">
+                        Ga verder
+                    </a>
+                </div>
 
-                    <div class="cell cell-full-width">
-                        <em>Voorbeeld op basis van Rente: {{ loan.rente_in_jkp | percentage }}, Vaste rente per jaar: {{ loan.rente_in_jkp | percentage }}, Totaal leenbedrag: {{ money | currency }}, Looptijd {{ (duration >= 12) ? Math.ceil(duration/12)+" jaar" : duration+" maand" }}, Totale betaling: {{ calculateTotalCost(loan.rente_in_jkp) | currency }}</em>
-                    </div>
-                </a>
-            </template>
-            <div v-if="allLoans.length === 0" class="border">
+                <div class="cell cell-full-width open">
+                    <em>Voorbeeld op basis van Rente: {{ loan.rente_in_jkp | percentage }}, Vaste rente per jaar: {{ loan.rente_in_jkp | percentage }}, Totaal leenbedrag: {{ money | currency }}, Looptijd {{ (duration >= 12) ? Math.ceil(duration/12)+" jaar" : duration+" maand" }}, Totale betaling: {{ calculateTotalCost(loan.rente_in_jkp) | currency }}</em>
+                </div>
+            </a>
+
+            <div v-if="allLoans.length === 0" class="block">
                 <div class="cell cell-full-width" v-if="loading">Bezig met laden van de leningen...</div>
                 <div class="cell cell-full-width" v-else>Er zijn geen leningen gevonden voor de huidige selectie. De duurtijd van uw lening is te hoog voor dit bedrag. Geef een lagere duurtijd of hoger bedrag op.</div>
             </div>

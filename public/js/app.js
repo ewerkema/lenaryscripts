@@ -28804,12 +28804,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
-//
-//
-//
-//
-//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     data: function data() {
@@ -29173,119 +29167,117 @@ var render = function() {
         _vm._m(1),
         _vm._v(" "),
         _vm._l(_vm.allLoans, function(loan) {
-          return [
-            _c(
-              "a",
-              {
-                staticClass: "block",
-                attrs: {
-                  href: loan.redirect_url,
-                  target: "_blank",
-                  rel: "noopener noreferrer"
-                }
-              },
-              [
-                _c("div", { staticClass: "cell cell-no-padding-xs" }, [
-                  loan.image !== false
-                    ? _c("span", [
-                        _c(
-                          "a",
-                          {
-                            attrs: {
-                              href: loan.redirect_url,
-                              target: "_blank",
-                              rel: "noopener noreferrer"
-                            }
-                          },
-                          [_c("img", { attrs: { src: loan.image } })]
-                        )
-                      ])
-                    : _c("span", [
-                        _vm._v(
-                          "\n                    Geen afbeelding gevonden\n                "
-                        )
-                      ])
+          return _c(
+            "a",
+            {
+              staticClass: "block",
+              attrs: {
+                href: loan.redirect_url,
+                target: "_blank",
+                rel: "noopener noreferrer"
+              }
+            },
+            [
+              _c("div", { staticClass: "cell cell-no-padding-xs" }, [
+                loan.image !== false
+                  ? _c("span", [
+                      _c(
+                        "a",
+                        {
+                          attrs: {
+                            href: loan.redirect_url,
+                            target: "_blank",
+                            rel: "noopener noreferrer"
+                          }
+                        },
+                        [_c("img", { attrs: { src: loan.image } })]
+                      )
+                    ])
+                  : _c("span", [
+                      _vm._v(
+                        "\n                Geen afbeelding gevonden\n            "
+                      )
+                    ])
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "cell cell-no-padding-xs" }, [
+                _c("strong", { staticClass: "visible-xs" }, [
+                  _vm._v("Totale aflossing")
                 ]),
                 _vm._v(" "),
-                _c("div", { staticClass: "cell cell-no-padding-xs" }, [
-                  _c("strong", { staticClass: "visible-xs" }, [
-                    _vm._v("Totale aflossing")
-                  ]),
-                  _vm._v(" "),
-                  _c("p", [
-                    _vm._v(
+                _c("p", [
+                  _vm._v(
+                    _vm._s(
+                      _vm._f("currency")(
+                        _vm.calculateTotalCost(loan.rente_in_jkp)
+                      )
+                    )
+                  )
+                ])
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "filler" }),
+              _vm._v(" "),
+              _c("div", { staticClass: "cell" }, [
+                _c("strong", { staticClass: "visible-xs" }, [_vm._v("Rente")]),
+                _vm._v(" "),
+                _c("p", [
+                  _c("strong", [
+                    _vm._v(_vm._s(_vm._f("percentage")(loan.rente_in_jkp)))
+                  ])
+                ])
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "filler" }),
+              _vm._v(" "),
+              _c("div", { staticClass: "cell" }, [
+                _c("strong", { staticClass: "visible-xs" }, [
+                  _vm._v("Maandelijkse aflossing")
+                ]),
+                _vm._v(" "),
+                _c("p", [
+                  _vm._v(
+                    _vm._s(
+                      _vm._f("currency")(
+                        _vm.calculateMonthlyPayment(loan.rente_in_jkp)
+                      )
+                    )
+                  )
+                ])
+              ]),
+              _vm._v(" "),
+              _vm._m(2, true),
+              _vm._v(" "),
+              _c("div", { staticClass: "cell cell-full-width open" }, [
+                _c("em", [
+                  _vm._v(
+                    "Voorbeeld op basis van Rente: " +
+                      _vm._s(_vm._f("percentage")(loan.rente_in_jkp)) +
+                      ", Vaste rente per jaar: " +
+                      _vm._s(_vm._f("percentage")(loan.rente_in_jkp)) +
+                      ", Totaal leenbedrag: " +
+                      _vm._s(_vm._f("currency")(_vm.money)) +
+                      ", Looptijd " +
+                      _vm._s(
+                        _vm.duration >= 12
+                          ? Math.ceil(_vm.duration / 12) + " jaar"
+                          : _vm.duration + " maand"
+                      ) +
+                      ", Totale betaling: " +
                       _vm._s(
                         _vm._f("currency")(
                           _vm.calculateTotalCost(loan.rente_in_jkp)
                         )
                       )
-                    )
-                  ])
-                ]),
-                _vm._v(" "),
-                _vm._m(2, true),
-                _vm._v(" "),
-                _c("div", { staticClass: "cell" }, [
-                  _c("strong", { staticClass: "visible-xs" }, [
-                    _vm._v("Rente")
-                  ]),
-                  _vm._v(" "),
-                  _c("p", [
-                    _vm._v(_vm._s(_vm._f("percentage")(loan.rente_in_jkp)))
-                  ])
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "filler" }),
-                _vm._v(" "),
-                _c("div", { staticClass: "cell" }, [
-                  _c("strong", { staticClass: "visible-xs" }, [
-                    _vm._v("Maandelijkse aflossing")
-                  ]),
-                  _vm._v(" "),
-                  _c("p", [
-                    _vm._v(
-                      _vm._s(
-                        _vm._f("currency")(
-                          _vm.calculateMonthlyPayment(loan.rente_in_jkp)
-                        )
-                      )
-                    )
-                  ])
-                ]),
-                _vm._v(" "),
-                _vm._m(3, true),
-                _vm._v(" "),
-                _c("div", { staticClass: "cell cell-full-width" }, [
-                  _c("em", [
-                    _vm._v(
-                      "Voorbeeld op basis van Rente: " +
-                        _vm._s(_vm._f("percentage")(loan.rente_in_jkp)) +
-                        ", Vaste rente per jaar: " +
-                        _vm._s(_vm._f("percentage")(loan.rente_in_jkp)) +
-                        ", Totaal leenbedrag: " +
-                        _vm._s(_vm._f("currency")(_vm.money)) +
-                        ", Looptijd " +
-                        _vm._s(
-                          _vm.duration >= 12
-                            ? Math.ceil(_vm.duration / 12) + " jaar"
-                            : _vm.duration + " maand"
-                        ) +
-                        ", Totale betaling: " +
-                        _vm._s(
-                          _vm._f("currency")(
-                            _vm.calculateTotalCost(loan.rente_in_jkp)
-                          )
-                        )
-                    )
-                  ])
+                  )
                 ])
-              ]
-            )
-          ]
+              ])
+            ]
+          )
         }),
         _vm._v(" "),
         _vm.allLoans.length === 0
-          ? _c("div", { staticClass: "border" }, [
+          ? _c("div", { staticClass: "block" }, [
               _vm.loading
                 ? _c("div", { staticClass: "cell cell-full-width" }, [
                     _vm._v("Bezig met laden van de leningen...")
@@ -29322,18 +29314,8 @@ var staticRenderFns = [
       _vm._v(" "),
       _c("div", { staticClass: "cell" }, [_vm._v("Rente")]),
       _vm._v(" "),
-      _c("div", { staticClass: "cell" }, [_vm._v("Maandelijkse aflossing")]),
-      _vm._v(" "),
-      _c("div", { staticClass: "cell" })
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "filler" }, [
-      _c("a", { staticClass: "btn visible-xs", attrs: { href: "#" } }, [
-        _vm._v("\n                        Ga verder\n                    ")
+      _c("div", { staticClass: "cell cell-double" }, [
+        _vm._v("Maandelijkse aflossing")
       ])
     ])
   },
@@ -29341,9 +29323,9 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "cell" }, [
-      _c("a", { staticClass: "btn hidden-xs", attrs: { href: "#" } }, [
-        _vm._v("\n                        Ga verder\n                    ")
+    return _c("div", { staticClass: "cell button" }, [
+      _c("a", { staticClass: "btn", attrs: { href: "#" } }, [
+        _vm._v("\n                    Ga verder\n                ")
       ])
     ])
   }

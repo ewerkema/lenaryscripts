@@ -104,10 +104,13 @@
   -ms-flex-positive: 1;
   flex-grow: 1;
   width: 100%;
-  padding: 0.8em 1.2em;
+  padding: 30px 10px;
   overflow: hidden;
   list-style: none;
-  vertical-align: center;
+}
+
+.comparator .comparator-results .cell.button, .comparator .block .cell.button {
+  padding: 20px 10px;
 }
 
 .comparator .comparator-results .cell strong, .comparator .block .cell strong {
@@ -141,7 +144,7 @@
   margin-bottom: 20px;
 }
 
-.comparator .comparator-results .block:nth-child(2n+1), .comparator .block .block:nth-child(2n+1) {
+.comparator .comparator-results .block:nth-child(2n+1):not(.block-head), .comparator .block .block:nth-child(2n+1):not(.block-head) {
   background-color: #f7ecf1;
 }
 
@@ -152,48 +155,99 @@
   -o-box-shadow: 0px 0px 15px 3px rgba(0, 0, 0, 0.1);
 }
 
+.comparator .comparator-results .block.block-head, .comparator .block .block.block-head {
+  color: #a7619c;
+  font-weight: bold;
+  border: none;
+  height: 50px;
+}
+
 .comparator .comparator-results.cols--1 .cell, .comparator .block.cols--1 .cell {
   width: calc(100% / 1);
+}
+
+.comparator .comparator-results.cols--1 .cell-double, .comparator .block.cols--1 .cell-double {
+  width: calc(200% / 1);
 }
 
 .comparator .comparator-results.cols--2 .cell, .comparator .block.cols--2 .cell {
   width: calc(100% / 2);
 }
 
+.comparator .comparator-results.cols--2 .cell-double, .comparator .block.cols--2 .cell-double {
+  width: calc(200% / 2);
+}
+
 .comparator .comparator-results.cols--3 .cell, .comparator .block.cols--3 .cell {
   width: calc(100% / 3);
+}
+
+.comparator .comparator-results.cols--3 .cell-double, .comparator .block.cols--3 .cell-double {
+  width: calc(200% / 3);
 }
 
 .comparator .comparator-results.cols--4 .cell, .comparator .block.cols--4 .cell {
   width: calc(100% / 4);
 }
 
+.comparator .comparator-results.cols--4 .cell-double, .comparator .block.cols--4 .cell-double {
+  width: calc(200% / 4);
+}
+
 .comparator .comparator-results.cols--5 .cell, .comparator .block.cols--5 .cell {
   width: calc(100% / 5);
+}
+
+.comparator .comparator-results.cols--5 .cell-double, .comparator .block.cols--5 .cell-double {
+  width: calc(200% / 5);
 }
 
 .comparator .comparator-results.cols--6 .cell, .comparator .block.cols--6 .cell {
   width: calc(100% / 6);
 }
 
+.comparator .comparator-results.cols--6 .cell-double, .comparator .block.cols--6 .cell-double {
+  width: calc(200% / 6);
+}
+
 .comparator .comparator-results.cols--7 .cell, .comparator .block.cols--7 .cell {
   width: calc(100% / 7);
+}
+
+.comparator .comparator-results.cols--7 .cell-double, .comparator .block.cols--7 .cell-double {
+  width: calc(200% / 7);
 }
 
 .comparator .comparator-results.cols--8 .cell, .comparator .block.cols--8 .cell {
   width: calc(100% / 8);
 }
 
+.comparator .comparator-results.cols--8 .cell-double, .comparator .block.cols--8 .cell-double {
+  width: calc(200% / 8);
+}
+
 .comparator .comparator-results.cols--9 .cell, .comparator .block.cols--9 .cell {
   width: calc(100% / 9);
+}
+
+.comparator .comparator-results.cols--9 .cell-double, .comparator .block.cols--9 .cell-double {
+  width: calc(200% / 9);
 }
 
 .comparator .comparator-results.cols--10 .cell, .comparator .block.cols--10 .cell {
   width: calc(100% / 10);
 }
 
+.comparator .comparator-results.cols--10 .cell-double, .comparator .block.cols--10 .cell-double {
+  width: calc(200% / 10);
+}
+
 .comparator .comparator-results.cols--11 .cell, .comparator .block.cols--11 .cell {
   width: calc(100% / 11);
+}
+
+.comparator .comparator-results.cols--11 .cell-double, .comparator .block.cols--11 .cell-double {
+  width: calc(200% / 11);
 }
 
 .comparator .comparator-results .cell.cell-full-width, .comparator .block .cell.cell-full-width {
@@ -204,6 +258,9 @@
   flex-grow: 1 !important;
   -ms-flex-preferred-size: 100% !important;
   flex-basis: 100% !important;
+}
+
+.comparator .comparator-results .open, .comparator .block .open {
   display: none;
 }
 
@@ -218,10 +275,10 @@
   .comparator .comparator-results .filler, .comparator .block .filler {
     display: block;
   }
-  .comparator .comparator-results .cell, .comparator .block .cell {
+  .comparator .comparator-results .cell, .comparator .comparator-results .cell.button, .comparator .block .cell, .comparator .block .cell.button {
     padding: 0 0 5px;
   }
-  .comparator .comparator-results .cell.cell-no-padding-xs, .comparator .block .cell.cell-no-padding-xs {
+  .comparator .comparator-results .cell.cell-no-padding-xs, .comparator .comparator-results .cell.button.cell-no-padding-xs, .comparator .block .cell.cell-no-padding-xs, .comparator .block .cell.button.cell-no-padding-xs {
     padding-bottom: 0;
   }
   .comparator .comparator-results img, .comparator .block img {
